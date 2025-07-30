@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selamat Datang di Layanan Kami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+    <style>
+      /* Pengaturan Dasar dan Font */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: "Poppins", sans-serif;
+        color: #ffffff;
+        overflow: hidden;
+      }
+
+      /* Latar Belakang Gradasi Animasi */
+      body {
+        background: linear-gradient(135deg, #0d324d, #7f5a83, #1dd1a1, #00d2d3);
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+      }
+
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Penataan Logo */
+      .logo-container {
+        margin-bottom: 1.5rem;
+      }
+
+      .logo-container svg {
+        width: 80px;
+        height: 80px;
+        stroke: rgba(255, 255, 255, 0.85);
+        animation: slowRotate 25s linear infinite;
+      }
+
+      @keyframes slowRotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Konten Utama */
+      .container {
+        position: relative;
+        z-index: 2;
+        padding: 20px;
+        max-width: 700px;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 2.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      /* -- BARU: Wrapper untuk membuat tombol fleksibel -- */
+      .button-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem; /* Jarak antar tombol */
+        flex-wrap: wrap; /* Agar tombol turun ke bawah jika tidak muat */
+      }
+
+      /* Tombol Ajakan (Call-to-Action) */
+      .cta-button {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #0d324d;
+        padding: 15px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        white-space: nowrap; /* Mencegah teks tombol terpotong */
+      }
+
+      .cta-button:hover {
+        transform: translateY(-5px);
+        background-color: #ffffff;
+      }
+
+      /* Footer */
+      footer {
+        position: absolute;
+        bottom: 20px;
+        z-index: 2;
+        font-size: 0.8rem;
+        opacity: 0.7;
+      }
+
+      /* Elemen "Blob" Animasi di Latar Belakang */
+      .blob {
+        position: absolute;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        border-radius: 50%;
+        filter: blur(40px);
+        z-index: 1;
+        animation: move 25s infinite alternate;
+      }
+
+      .blob1 {
+        width: 400px;
+        height: 400px;
+        top: -150px;
+        left: -150px;
+        animation-duration: 20s;
+      }
+      .blob2 {
+        width: 300px;
+        height: 300px;
+        bottom: -100px;
+        right: -100px;
+        animation-duration: 25s;
+        animation-delay: -5s;
+      }
+      .blob3 {
+        width: 250px;
+        height: 250px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-duration: 30s;
+      }
+
+      @keyframes move {
+        from {
+          transform: rotate(0deg) scale(1) translateX(10px) translateY(10px);
+        }
+        to {
+          transform: rotate(360deg) scale(1.4) translateX(-20px) translateY(-20px);
+        }
+      }
+
+      /* Penyesuaian untuk layar kecil (Mobile-friendly) */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+        .cta-button {
+          padding: 12px 30px;
+        }
+        .logo-container svg {
+          width: 60px;
+          height: 60px;
+        }
+
+        /* -- BARU: Membuat tombol bertumpuk di layar kecil -- */
+        .button-wrapper {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+
+    <main class="container">
+      <div class="logo-container">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33A1.65 1.65 0 0 0 9 4.6V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82A1.65 1.65 0 0 0 19.4 15z"
+          ></path>
+        </svg>
+      </div>
+
+      <header>
+        <h1>Selamat Datang</h1>
+      </header>
+      <p>Platform inovatif yang dirancang untuk merevolusi alur kerja Anda. Bergabunglah dengan ribuan pengguna yang telah merasakan efisiensi dan kemudahan.</p>
+
+      <div class="button-wrapper">
+        <a href="https://mpi-fiksi.mulyono.my.id/" target="_blank" rel="noopener noreferrer" class="cta-button"> Mulai Sekarang </a>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Perusahaan Anda. Hak Cipta Dilindungi.</p>
+    </footer>
+  </body>
+</html>
